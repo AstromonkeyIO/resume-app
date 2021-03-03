@@ -1,18 +1,24 @@
 {
-  "name": "personalportfolio",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "jquery": "^3.2.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-ga": "^2.3.5",
-    "react-scripts": "1.0.17"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "name": "personalportfolio",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "eslint": "^5.16.0",
+        "jquery": "^3.2.1",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "react-ga": "^2.3.5",
+        "react-player": "^2.9.0",
+        "react-scripts": "1.0.17",
+        "react-youtube": "7.13.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    },
+    "devDependencies": {
+        "eslint-plugin-react": "^7.22.0"
+    }
 }

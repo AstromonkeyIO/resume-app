@@ -1,45 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
+import YouTube from 'react-youtube';
 
-class Portfolio extends Component {
-  render() {
-
-    if(this.props.data){
-      var projects = this.props.data.projects.map(function(projects){
-        var projectImage = 'images/portfolio/'+projects.image;
-        return <div key={projects.title} className="columns portfolio-item">
-           <div className="item-wrap">
-            <a href={projects.url} title={projects.title}>
-               <img alt={projects.title} src={projectImage} />
-               <div className="overlay">
-                  <div className="portfolio-item-meta">
-                 <h5>{projects.title}</h5>
-                     <p>{projects.category}</p>
-                  </div>
-                </div>
-              <div className="link-icon"><i className="fa fa-link"></i></div>
-            </a>
-          </div>
-        </div>
-      })
+const Portfolio = (props) => {
+    if (!props.data) {
+        return null;
     }
 
     return (
-      <section id="portfolio">
-
-      <div className="row">
-
-         <div className="twelve columns collapsed">
-
-            <h1>Check Out Some of My Works.</h1>
-
-            <div id="portfolio-wrapper" className="bgrid-quarters s-bgrid-thirds cf">
-                {projects}
+        <section id="portfolio">
+            <div className="row">
+                <div className="twelve columns collapsed">
+                    <h1>Check Out My Underwater Films</h1>
+                    <div id="portfolio-wrapper" className="bgrid-quarters s-bgrid-thirds cf">
+                        {generateProjects(props.data.projects)}
+                    </div>
+                </div>
             </div>
-          </div>
-      </div>
-   </section>
+        </section>
     );
-  }
+}
+
+const generateProjects = (projectsData) => {
+    return projectsData.map((project) => {
+        const videoId = project.videoId;
+        return (
+            <div className="row" key={videoId}>
+                <YouTube videoId={videoId} />
+            </div>
+        )
+    });
 }
 
 export default Portfolio;
